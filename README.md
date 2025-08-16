@@ -120,7 +120,7 @@ via this user should get the mail
   - Subject: `Team Member Recognized: <name>`
   - Content: Recipient, sender (or “anonymous”), message, emojis.
 - **SMTP**: Gmail (`smtp.gmail.com`, port 587, TLS).
-- **Credentials**: Stored in `.env`:
+- **Credentials**: it is prefixed in code as of now can be changed toi .env file later:
   ```
   EMAIL_USER=your-email@gmail.com
   EMAIL_PASS=your-app-specific-password
@@ -135,8 +135,8 @@ via this user should get the mail
 
 ## Security
 - **RBAC**: Restricts access by role (e.g., `analytics` for MANAGER/HR/ADMIN).
-- **Passwords**: Restricted in `User` queries. Use `bcrypt` in production.
-- **Production**: Use HTTPS, secure `.env` (add to `.gitignore`).
+- **Passwords**: Restricted in `User` queries. will Use `bcrypt` in production.
+
 
 ## Testing
 1. **Set Headers**:
