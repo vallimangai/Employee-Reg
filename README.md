@@ -6,6 +6,20 @@ A GraphQL API built with TypeScript for sending employee recognitions (kudos) wi
 ## Base URL
 - **Endpoint**: `http://localhost:4000` (HTTPS in production)
 - **WebSocket**: `ws://localhost:4000` (for subscriptions)
+## Demo
+**Send Recognitions**
+<img width="3827" height="1412" alt="image" src="https://github.com/user-attachments/assets/1e7ba4b6-a5a4-4155-9431-53faf6702cd4" />
+via this user should get the mail
+<img width="1302" height="607" alt="image" src="https://github.com/user-attachments/assets/674263c9-338a-4af2-972d-142ee3c8c9e2" />
+**Analaysis**
+<img width="3836" height="1497" alt="image" src="https://github.com/user-attachments/assets/1ecf624d-890f-49e1-a5e2-7d8f443f42c5" />
+**Analaysis with keyword**
+<img width="3838" height="1862" alt="image" src="https://github.com/user-attachments/assets/ae35b4a7-e559-4eab-8193-2d13d9ac92df" />
+**Get all recognitions**
+<img width="3777" height="1900" alt="image" src="https://github.com/user-attachments/assets/7cfe0754-3c61-4ab4-a000-f9fc0a2be2ef" />
+**View Single employee recognitions**
+<img width="3831" height="1687" alt="image" src="https://github.com/user-attachments/assets/7c5066cb-b03f-4bab-86fa-8f2755df8ba4" />
+
 
 ## Authentication
 - **Headers**:
@@ -128,8 +142,8 @@ A GraphQL API built with TypeScript for sending employee recognitions (kudos) wi
 1. **Set Headers**:
    ```json
    {
-     "X-Username": "mangai@company.com",
-     "X-Password": "mangai123"
+     "X-username": "mangai@company.com",
+     "x-password": "mangai123"
    }
    ```
 2. **Test Mutation**: Run `sendRecognition`, check Gmail inbox.
