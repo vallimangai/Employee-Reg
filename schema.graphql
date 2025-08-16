@@ -1,0 +1,66 @@
+enum Visibility {
+  PUBLIC
+  PRIVATE
+  ANONYMOUS
+}
+
+enum Role {
+  EMPLOYEE
+  MANAGER
+  HR
+  ADMIN
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  team: String!
+  role: Role!
+  password: String! # Added for authentication
+}
+
+type Recognition {
+  id: ID!
+  from: User
+  to: User!
+  message: String!
+  emojis: [String!]!
+  visibility: Visibility!
+  timestamp: String!
+}
+
+type TeamSummary {
+  team: String!
+  count: Int!
+}
+
+type KeywordSummary {
+  keyword: String!
+  count: Int!
+}
+
+type AnalyticsSummary {
+  totalRecognitions: Int!
+  byTeam: [TeamSummary!]!
+  byKeyword: [KeywordSummary!]!
+  engagementLevel: Float!
+  byDateRange: [Recognition!]!
+}
+
+type Query {
+  recognitions(team: String): [Recognition!]!
+  userRecognitions(userId: ID!): [Recognition!]!
+  analytics(team: String, keyword: String, startDate: String, endDate: String): AnalyticsSummary!
+  user(id: ID!): User
+  users: [User!]!
+}
+
+type Mutation {
+  sendRecognition(toId: ID!, message: String!, emojis: [String!]!, visibility: Visibility!): Recognition!
+}
+
+type Subscription {
+  newRecognition(userId: ID!): Recognition
+  newTeamRecognition(team: String!): Recognition
+}
